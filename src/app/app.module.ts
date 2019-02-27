@@ -13,6 +13,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Camera } from '@ionic-native/camera';
 import { Crop } from '@ionic-native/crop';
+import { File } from '@ionic-native/file';
+
+import {HttpClientModule} from "@angular/common/http";
 @NgModule({
   declarations: [
     MyApp,
@@ -23,6 +26,7 @@ import { Crop } from '@ionic-native/crop';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -34,6 +38,7 @@ import { Crop } from '@ionic-native/crop';
     TabsPage
   ],
   providers: [
+  File,
   Crop,
   Camera,
     Geolocation,
