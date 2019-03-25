@@ -14,7 +14,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { Camera } from '@ionic-native/camera';
 import { Crop } from '@ionic-native/crop';
 import { File } from '@ionic-native/file';
-
+import { FileTransfer} from '@ionic-native/file-transfer';
 import {HttpClientModule} from "@angular/common/http";
 @NgModule({
   declarations: [
@@ -38,6 +38,7 @@ import {HttpClientModule} from "@angular/common/http";
     TabsPage
   ],
   providers: [
+  FileTransfer,
   File,
   Crop,
   Camera,

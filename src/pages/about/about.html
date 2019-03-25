@@ -1,34 +1,63 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      Feedback
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
-<button ion-button full color="primary" (click)="Capture()">Camera</button>
-<button ion-button full color="primary" (click)="CropImage()">Crop</button>
-{{x}}
-<h3>Image:</h3>
-<!-- {{imageData}} -->
 <img [src]="imageData"/>
-{{err}}
+<hr>
 
-<button ion-button full color="primary" (click)="LocationWatch()">Location</button>
-{{lat}}
-{{long}}
+<button ion-button round color="dark" (click)="Capture()">
+	 <ion-icon name="camera"></ion-icon>
+</button>
+<button ion-button round color="dark" (click)="CropImage()">
+	 <ion-icon name="crop"></ion-icon>
+</button>
+<hr>
 
-<ion-item>
-  <ion-label>Date</ion-label>
-  <ion-datetime displayFormat="DD MMMM YYYY" [(ngModel)]="Date"></ion-datetime>
-</ion-item>
-<ion-item>
-  <ion-label>Time</ion-label>
-  <ion-datetime displayFormat="h:mm a" [(ngModel)]="Date"></ion-datetime>
-</ion-item>
-{{Date}}
-{{imageData}}
-<button ion-button full color="primary" (click)="UploadImage()">Upload Image</button>
+<button ion-button round color="dark" (click)="demo1()">
+	 <ion-icon name="aperture"></ion-icon>
+</button>
+<button ion-button round color="dark" (click)="demo2()">
+	 <ion-icon name="aperture"></ion-icon>
+</button>
+<button ion-button round color="dark" (click)="demo3()">
+	 <ion-icon name="aperture"></ion-icon>
+</button>
+<hr>
+	<ion-item>
+	<ion-label color="dark" floating>Danger Level {{danger_level}}</ion-label>
+	  <ion-range [(ngModel)]="danger_level" min="0" max="5" color="dark" snaps="true" pin="true">
+	    
+	    <ion-label range-left>0</ion-label>
+	    <ion-label range-right>5</ion-label>
+	  </ion-range>
+	</ion-item>
+
+
+	<ion-item>
+	<ion-textarea [(ngModel)]="feedback_text" rows="6" cols="20" placeholder="Enter any notes here..."></ion-textarea>
+	</ion-item>
+
+<hr>
+<div style="text-align: center;">
+	<h5 style="color: red;" *ngIf="!lat">Turn on GPS of this phone</h5>
+	<button  round color="danger" *ngIf="!lat" (click)="LocationWatch()" text-center ion-button outline item-end icon-start>
+		 <ion-icon name="locate"></ion-icon> 
+		 GPS
+	</button>
+</div>
+
+<hr>
+<div style="text-align: center;">
+	<button ion-button round color="dark" (click)="UploadImage()" large >
+	Submit
+	</button>
+</div>
+
+
 </ion-content>
