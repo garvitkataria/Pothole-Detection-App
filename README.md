@@ -25,7 +25,7 @@ To run the code
 
 Download mobile app for Android Devices
 
-https://github.com/garvitkataria/Ionic-Calendar-App/blob/master/android-debug.apk
+https://github.com/garvitkataria/Pothole-Detection-App/blob/master/android-debug.apk
 
 
 (Turn on the USB debugging option first.)
